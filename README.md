@@ -1,8 +1,14 @@
-# Advanced Sample Hardhat Project
+# Upgradable Smart Contracts
 
-This project demonstrates an advanced Hardhat use case, integrating other tools commonly used alongside Hardhat in the ecosystem.
+This project follows the transparent proxy pattern.
 
-The project comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts. It also comes with a variety of other tools, preconfigured to work with the project code.
+Upgradeable smart contract are actually 3 contracts:
+
+- Proxy contract: The smart contract which user interacts with. It will keep data/state which mean data is store in the context of this proxy contract account. This is an EIP1967 standard proxy contract.
+
+- Implementation contract: The smart contract provides functionality and logic. Please note that the data is also defined in this contract. This is the smart contract you build.
+
+- ProxyAdmin contract: The contract links Proxy and Implementation.
 
 Try running some of the following tasks:
 
